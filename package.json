@@ -1,5 +1,5 @@
 {
-  "name": "horriblefilm-api",
+  "name": "horriblefilm-service",
   "version": "1.0.0",
   "description": "",
   "main": "app.js",
@@ -9,10 +9,14 @@
   "author": "Logan Gore",
   "license": "ISC",
   "dependencies": {
+    "bcrypt": "^2.0.1",
+    "jsonwebtoken": "^8.2.2",
     "koa": "^2.0.0-alpha.8",
     "koa-bodyparser": "^4.2.1",
+    "koa-jwt": "^3.3.2",
     "koa-router": "^7.4.0",
     "sequelize": "^4.37.10",
     "sqlite3": "^4.0.0"
-  }
+  },
+  "repository": "https://github.com/Logangster/horriblefilm-service.git"
 }
