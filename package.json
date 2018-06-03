@@ -2,7 +2,7 @@
   "name": "horriblefilm-api",
   "version": "1.0.0",
   "description": "",
-  "main": "server.js",
+  "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -13,7 +13,6 @@
     "koa-bodyparser": "^4.2.1",
     "koa-router": "^7.4.0",
     "sequelize": "^4.37.10",
-    "sequelize-cli": "^4.0.0",
     "sqlite3": "^4.0.0"
   }
 }
