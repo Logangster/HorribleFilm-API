@@ -6,7 +6,7 @@ module.exports = {
   async findOne(ctx) {
     const user = await ctx.db.User.findById(ctx.params.id);
     if (!user) {
-      ctx.throw(404, 'invalid user id');
+      ctx.throw(404);
     }
     ctx.body = user;
   },
@@ -21,7 +21,7 @@ module.exports = {
 
   async delete(ctx) {
     const count = await ctx.db.User.destroy({ where: { id: ctx.params.id } });
-    count === 0 ? ctx.throw(404, 'invalid user id') : ctx.body = 'user deleted successfully';
+    count === 0 ? ctx.throw(404) : ctx.body = 'User deleted successfully';
   },
 
   async update(ctx) {
@@ -33,6 +33,6 @@ module.exports = {
       where: { id: ctx.params.id } 
     });
 
-    count === 0 ? ctx.throw(404, 'invalid user id') : ctx.body = 'user updated succesfully';
+    count === 0 ? ctx.throw(404) : ctx.body = 'User updated succesfully';
   }
 }

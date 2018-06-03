@@ -7,14 +7,14 @@ module.exports = {
     let { username, password } = ctx.request.body;
     const user = await ctx.db.User.findOne({ where: { username } });
     if (!user) {
-      ctx.throw(401, { message: 'Unauthorized' });
+      ctx.throw(401);
     }
 
     if (await bcrypt.compare(password, user.password)) {
       const token = jwt.sign({ username: user.username }, config.jwtSecret, { expiresIn: '1h' });
       ctx.body = token
     } else {
-      ctx.throw(401, { message: 'Unauthorized' });
+      ctx.throw(401);
     }
   },
 }
