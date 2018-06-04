@@ -1,4 +1,4 @@
-const conf = require('./config.json');
+const config = require('./config.json');
 const protectedRoutes = require('./protected-routes');
 const publicRoutes = require('./protected-routes');
 

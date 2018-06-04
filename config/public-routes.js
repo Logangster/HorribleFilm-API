@@ -5,7 +5,7 @@ var router = new Router({
 const {
     AuthController,
     UserController
-} = require('./controllers');
+} = require('../controllers');
 
 router.post('/login', AuthController.login);
 

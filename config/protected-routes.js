@@ -4,7 +4,7 @@ var router = new Router({
 });
 const {
     UserController
-} = require('./controllers');
+} = require('../controllers');
 
 // User Routes
 router.get('/users/:id', UserController.findOne);
