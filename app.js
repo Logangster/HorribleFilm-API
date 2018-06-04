@@ -2,9 +2,7 @@ const Koa = require('koa');
 const bodyParser = require('koa-bodyparser');
 const jwt = require('koa-jwt');
 
-const config = require('./config/config.json');
-const protectedRouter = require('./protected-routes');
-const publicRouter = require('./public-routes');
+const { config, protectedRoutes, publicRoutes } = require('./config');
 const db = require('./models');
 
 const PORT = 8080
@@ -22,8 +20,8 @@ app.use(async (ctx, next) => {
   }
 });
 
-app.use(publicRouter.routes());
+app.use(publicRoutes.routes());
 app.use(jwt({ secret: config.jwtSecret }));
-app.use(protectedRouter.routes());
+app.use(protectedRoutes.routes());
 app.listen(PORT);
 console.log(`SERVER LISTENING ON ${PORT}`);
