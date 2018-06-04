@@ -8,6 +8,8 @@ const {
 } = require('./controllers');
 
 router.post('/login', AuthController.login);
+
+// User Routes
 router.post('/users', UserController.create);
 router.get('/users', UserController.findAll);
 

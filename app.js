@@ -13,6 +13,7 @@ const app = new Koa();
 app.context.db = db;
 app.use(bodyParser());
 
+// Default error catching if any promises throw errors
 app.use(async (ctx, next) => {
   try {
     await next();

@@ -11,8 +11,8 @@ module.exports = {
     }
 
     if (await bcrypt.compare(password, user.password)) {
-      const token = jwt.sign({ username: user.username }, config.jwtSecret, { expiresIn: '1h' });
-      ctx.body = token
+      const token = jwt.sign({ id: user.id, username: user.username }, config.jwtSecret, { expiresIn: '1h' });
+      ctx.body = { token };
     } else {
       ctx.throw(401);
     }
