@@ -11,4 +11,5 @@ var router = new Router({
 router.post('/login', AuthController.login);
 router.post('/users', UserController.create);
 router.get('/users', UserController.findAll);
+
 module.exports = router;
