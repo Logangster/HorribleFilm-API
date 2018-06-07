@@ -1,15 +1,15 @@
 const Router = require('koa-router');
+const {
+  AuthController,
+  UserController
+} = require('../controllers');
+
 var router = new Router({
   prefix: '/api'
 });
-const {
-    AuthController,
-    UserController
-} = require('../controllers');
 
 router.post('/login', AuthController.login);
 
-// User Routes
 router.post('/users', UserController.create);
 router.get('/users', UserController.findAll);
 

@@ -3,6 +3,8 @@ const jwt = require('jsonwebtoken');
 const config = require('../config/config.json');
 
 module.exports = {
+  name: 'AuthController',
+  
   async login(ctx) {
     let { username, password } = ctx.request.body;
     const user = await ctx.db.User.findOne({ where: { username } });

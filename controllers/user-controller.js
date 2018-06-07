@@ -1,4 +1,6 @@
 module.exports = {
+  name: 'UserController',
+  
   async findAll(ctx) {
     ctx.body = await ctx.db.User.findAll();
   },
