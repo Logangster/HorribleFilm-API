@@ -4,10 +4,6 @@ module.exports = class UserController {
     ctx.body = await ctx.db.User.findAll();
   }
 
-  async findAll(ctx) {
-    ctx.body = await ctx.db.User.findAll();
-  }
-
   async findOne(ctx) {
     const user = await ctx.db.User.findById(ctx.params.id);
     if (!user) {
@@ -40,5 +36,5 @@ module.exports = class UserController {
 
     count === 0 ? ctx.throw(404) : ctx.body = 'User updated succesfully';
   }
-  
+
 }
