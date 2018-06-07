@@ -6,7 +6,6 @@ const config = require('./config/config.json');
 const { publicRouter, protectedRouter } = require('./routers');
 const db = require('./models');
 
-const PORT = 8080
 const app = new Koa();
 
 app.context.db = db;
@@ -24,5 +23,5 @@ app.use(async (ctx, next) => {
 app.use(publicRouter.routes());
 app.use(jwt({ secret: config.jwtSecret }));
 app.use(protectedRouter.routes());
-app.listen(PORT);
-console.log(`SERVER LISTENING ON ${PORT}`);
+app.listen(config.port);
+console.log(`SERVER LISTENING ON ${config.port}`);
