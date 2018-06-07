@@ -16,6 +16,7 @@ app.use(async (ctx, next) => {
   try {
     await next();
   } catch (err) {
+    // TODO: Need to add check for production env
     ctx.throw(err.status || 500, err);
   }
 });

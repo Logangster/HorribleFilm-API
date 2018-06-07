@@ -1,9 +1,12 @@
-module.exports = {
-  name: 'UserController',
-  
+module.exports = class UserController {
+
   async findAll(ctx) {
     ctx.body = await ctx.db.User.findAll();
-  },
+  }
+
+  async findAll(ctx) {
+    ctx.body = await ctx.db.User.findAll();
+  }
 
   async findOne(ctx) {
     const user = await ctx.db.User.findById(ctx.params.id);
@@ -11,7 +14,7 @@ module.exports = {
       ctx.throw(404);
     }
     ctx.body = user;
-  },
+  }
 
   async create(ctx) {
     ctx.body = await ctx.db.User.create({
@@ -19,12 +22,12 @@ module.exports = {
       email: ctx.request.body.email,
       password: ctx.request.body.password
     });
-  },
+  }
 
   async delete(ctx) {
     const count = await ctx.db.User.destroy({ where: { id: ctx.params.id } });
     count === 0 ? ctx.throw(404) : ctx.body = 'User deleted successfully';
-  },
+  }
 
   async update(ctx) {
     const count = await ctx.db.User.update({
@@ -37,4 +40,5 @@ module.exports = {
 
     count === 0 ? ctx.throw(404) : ctx.body = 'User updated succesfully';
   }
+  
 }

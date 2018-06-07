@@ -10,9 +10,8 @@ fs
     return (file.indexOf('.') !== 0) && (file !== basename) && (file.slice(-3) === '.js');
   })
   .forEach(file => {
-    var controller = require(path.join(__dirname, file))
-    if ('name' in controller)
-        controllers[controller.name] = controller;
+    const Controller = require(path.join(__dirname, file))
+    controllers[Controller.name] = new Controller();
   });
 
 module.exports = controllers;

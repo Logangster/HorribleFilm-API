@@ -2,9 +2,8 @@ const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 const config = require('../config/config.json');
 
-module.exports = {
-  name: 'AuthController',
-  
+module.exports = class AuthController {
+
   async login(ctx) {
     let { username, password } = ctx.request.body;
     const user = await ctx.db.User.findOne({ where: { username } });
@@ -18,5 +17,6 @@ module.exports = {
     } else {
       ctx.throw(401);
     }
-  },
+  }
+
 }
