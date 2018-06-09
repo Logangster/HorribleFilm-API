@@ -2,7 +2,7 @@ const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 const config = require('../config/config.json');
 
-module.exports = class AuthController {
+class AuthController {
 
   async login(ctx) {
     let { username, password } = ctx.request.body;
@@ -20,3 +20,5 @@ module.exports = class AuthController {
   }
 
 }
+
+module.exports = AuthController;

@@ -1,4 +1,4 @@
-module.exports = class UserController {
+class UserController {
 
   async findAll(ctx) {
     ctx.body = await ctx.db.User.findAll();
@@ -38,3 +38,5 @@ module.exports = class UserController {
   }
 
 }
+
+module.exports = UserController;
