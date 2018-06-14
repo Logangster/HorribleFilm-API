@@ -1,11 +1,11 @@
 {
   "development": {
-    "username": "root",
+    "username": "postgres",
     "password": null,
-    "database": "database_development",
+    "database": "horriblefilm-dev",
+    "port": 5432,
     "host": "127.0.0.1",
-    "dialect": "sqlite",
-    "storage": "./develop.sqlite"
+    "dialect": "postgres"
   },
   "test": {
     "username": "root",
